@@ -28,7 +28,7 @@ jobs:
     
     steps:
     - name: Checkout source coe
-      uses: hashicorp/setup-terraform@v4
+      uses: hashicorp/checkout@v4
 
     - name: Setup Terraform with specified version on the runner
       uses: hashicorp/setup-terraform@2

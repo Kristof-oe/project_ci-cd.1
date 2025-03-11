@@ -5,6 +5,7 @@ module "ec2_instance" {
 
   instance_type          = "t2.small"
   key_name               = "jenkins"
+  ami = "ami-04b4f1a9cf54c11d0"
   monitoring = true
   vpc_security_group_ids = [aws_security_group.jenkins_sg.id]
   subnet_id              = data.aws_subnet.subnet.id

@@ -26,7 +26,7 @@ module "ec2_instance" {
         systemctl start jenkins
         systemctl enable jenkins
         systemctl status jenkins
-        cat /var/lib/jenkins/secrets/initialAdminPassword' >> /var/log/jenkins-password.log
+        cat /var/lib/jenkins/secrets/initialAdminPassword >> /var/log/jenkins-password.log
   EOF
 }
 

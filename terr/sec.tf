@@ -1,6 +1,6 @@
 resource "aws_security_group" "jenkins_sg" {
 
-  vpc_id = data.aws_vpc.default.id
+  vpc_id = data.aws_subnet.default.id
   name   = "jenkins-sg"
 
   ingress {

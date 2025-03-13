@@ -3,12 +3,16 @@ on:
   push:
     branches:
       - main
+      - destroy
+      - apply
     # paths:
     #   - terr/
 
   pull_request:
     branches:
       - main
+      - destroy
+      - apply
     # paths:
     #   - terr/
 

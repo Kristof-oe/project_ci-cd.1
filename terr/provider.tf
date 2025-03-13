@@ -10,7 +10,7 @@ terraform {
   }
   backend "s3" {
     bucket = "terraform-bucket432"
-    version = ">=2.0"
+    key= "terraform.tfstate"
     region = "us-east-1"
     
   }

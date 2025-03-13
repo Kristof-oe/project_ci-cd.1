@@ -31,10 +31,7 @@ module "ec2_instance" {
 }
 
 data "aws_subnet" "subnet" {
-  filter {
-    name   = "vpc-id"
-    values = [data.aws_default.id]
-  }
+  vpc_id=data.aws_vpc.default.id
 
 
 }

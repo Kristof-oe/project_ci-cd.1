@@ -8,7 +8,7 @@ terraform {
     }
 
   }
-  
+
   backend "s3" {
     bucket = "terraform-bucket432"
     key    = "terraform.tfstate"

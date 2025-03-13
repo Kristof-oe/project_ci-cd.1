@@ -35,7 +35,7 @@ data "aws_subnet" "default" {
   vpc_id = data.aws_vpc.default.id
 
   filter {
-    name   = "zone"
+    name   = "availabilityZone"
     values = ["us-east-1a"]
   }
 

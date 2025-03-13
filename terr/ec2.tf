@@ -16,16 +16,20 @@ module "ec2_instance" {
   user_data = <<-EOF
         #!/bin/bash
         set -e
+        apt-get update
+        apt-get install -y openjdk-21-jdk jenkins
+
         wget -O /usr/share/keyrings/jenkins-keyring.asc \
         https://pkg.jenkins.io/debian/jenkins.io-2023.key
+
         echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
         https://pkg.jenkins.io/debian binary/ | sudo tee \
         /etc/apt/sources.list.d/jenkins.list > /dev/null
-        apt-get update
-        apt-get install -y openjdk-21-jdk jenkins
+
         systemctl start jenkins
         systemctl enable jenkins
         systemctl status jenkins
+        
         cat /var/lib/jenkins/secrets/initialAdminPassword >> /var/log/jenkins-password.log
   EOF
 }

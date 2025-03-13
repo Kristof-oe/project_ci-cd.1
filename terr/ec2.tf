@@ -31,7 +31,7 @@ module "ec2_instance" {
 }
 
 data "aws_subnet" "subnet" {
-  
-  vpc_id=data.aws_vpc.default.id
+
+  vpc_id = data.aws_vpc.default.id
 }
 

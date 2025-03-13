@@ -8,7 +8,7 @@ module "ec2_instance" {
   ami                    = "ami-04b4f1a9cf54c11d0"
   monitoring             = true
   vpc_security_group_ids = [aws_security_group.jenkins_sg.id]
-  subnet_id              = data.aws_subnet.subnet.id
+  subnet_id              = data.aws_subnet.default.id
 
   tags = {
     Environment = "dev"
@@ -30,7 +30,7 @@ module "ec2_instance" {
   EOF
 }
 
-data "aws_subnet" "subnet" {
+data "aws_subnet" "default" {
 
   vpc_id = data.aws_vpc.default.id
 }

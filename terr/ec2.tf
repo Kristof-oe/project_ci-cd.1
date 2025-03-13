@@ -1,12 +1,12 @@
 module "ec2_instance" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
+  source = "terraform-aws-modules/ec2-instance/aws"
 
   name = "jenkins_instance"
 
   instance_type          = "t2.small"
   key_name               = "jenkins"
-  ami = "ami-04b4f1a9cf54c11d0"
-  monitoring = true
+  ami                    = "ami-04b4f1a9cf54c11d0"
+  monitoring             = true
   vpc_security_group_ids = [aws_security_group.jenkins_sg.id]
   subnet_id              = data.aws_subnet.subnet.id
 
@@ -31,11 +31,11 @@ module "ec2_instance" {
 }
 
 data "aws_subnet" "subnet" {
-  filter{
-    name = "vpc-id"
+  filter {
+    name   = "vpc-id"
     values = [data.aws_default.id]
   }
- 
+
 
 }
 

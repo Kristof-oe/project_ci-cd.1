@@ -22,7 +22,7 @@ module "ec2_instance" {
         https://pkg.jenkins.io/debian binary/ | sudo tee \
         /etc/apt/sources.list.d/jenkins.list > /dev/null
         apt-get update
-        apt-get install -y openjdk-11-jdk jenkins
+        apt-get install -y openjdk-21-jdk jenkins
         systemctl start jenkins
         systemctl enable jenkins
         systemctl status jenkins

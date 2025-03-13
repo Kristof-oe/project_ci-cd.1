@@ -3,13 +3,14 @@ on:
   push:
     branches:
       - main
-    paths:
-      - terr/**
+    # paths:
+    #   - terr/
+
   pull_request:
     branches:
       - main
-    paths:
-      - terr/**
+    # paths:
+    #   - terr/
 
 env:
  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

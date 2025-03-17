@@ -17,7 +17,7 @@ module "ec2_instance" {
         #!/bin/bash
         set -e
         apt-get update
-        apt-get install -y openjdk-21-jdk wget gnupg
+        apt-get install -y openjdk-21-jdk 
 
         wget -O /usr/share/keyrings/jenkins-keyring.asc \
         https://pkg.jenkins.io/debian/jenkins.io-2023.key
@@ -30,10 +30,9 @@ module "ec2_instance" {
 
         apt-get install -y jenkins
 
-        systemctl daemon-reload
+        systemctl start jenkins
 
         systemctl enable --now jenkins
-        systemctl status jenkins
 
         cat /var/lib/jenkins/secrets/initialAdminPassword
   EOF

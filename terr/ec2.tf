@@ -17,7 +17,11 @@ module "ec2_instance" {
                  #!/bin/bash
         set -e
         apt-get update
-        apt-get install -y openjdk-21-jdk 
+        apt-get install -y openjdk-21-jdk
+
+        apt-get update
+        apt-get install -y python3 python3-pip
+        pip3 install django
 
         wget -O /usr/share/keyrings/jenkins-keyring.asc \
         https://pkg.jenkins.io/debian/jenkins.io-2023.key

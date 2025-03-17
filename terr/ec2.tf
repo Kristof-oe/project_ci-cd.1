@@ -14,8 +14,8 @@ module "ec2_instance" {
     Environment = "dev"
   }
   user_data = <<-EOF
-                !#/bin/bash
-                echo "Hello bello" | sudo tee /home/hello.txt
+                #!/bin/bash
+                echo "Hello bello" >  /home/hello.txt
   EOF
 }
 

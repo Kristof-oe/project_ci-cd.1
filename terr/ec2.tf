@@ -15,7 +15,7 @@ module "ec2_instance" {
   }
   user_data = <<-EOF
                 !#/bin/bash
-                echo "Hello bello" > home/hello.txt
+                echo "Hello bello" > /home/hello.txt
   EOF
 }
 

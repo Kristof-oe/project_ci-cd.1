@@ -36,7 +36,7 @@ module "ec2_instance" {
 
         cat /var/lib/jenkins/secrets/initialAdminPassword
 
-
+    EOF
 }
 
 data "aws_subnet" "default" {

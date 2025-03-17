@@ -13,7 +13,7 @@ module "ec2_instance" {
   tags = {
     Environment = "dev"
   }
-   user_data = <<-EOF
+  user_data = <<-EOF
                  #!/bin/bash
         set -e
         apt-get update

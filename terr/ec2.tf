@@ -14,25 +14,9 @@ module "ec2_instance" {
     Environment = "dev"
   }
   user_data = <<-EOF
-        #!/bin/bash
-        set -e
-        apt-get update
-        sudo apt install docker.io
-        apt-get install -y openjdk-21-jdk jenkins
-
-        wget -O /usr/share/keyrings/jenkins-keyring.asc \
-        https://pkg.jenkins.io/debian/jenkins.io-2023.key
-
-        echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
-        https://pkg.jenkins.io/debian binary/ | sudo tee \
-        /etc/apt/sources.list.d/jenkins.list > /dev/null
-
-        systemctl start jenkins
-        systemctl enable jenkins
-        systemctl status jenkins
-
-        cat /var/lib/jenkins/secrets/initialAdminPassword
-  EOF
+                #!/bin/bash
+                echo "Hello bello" >  /home/hello.txt
+                EOF
 }
 
 data "aws_subnet" "default" {

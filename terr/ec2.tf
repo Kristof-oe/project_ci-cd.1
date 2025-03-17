@@ -32,8 +32,7 @@ module "ec2_instance" {
 
         systemctl daemon-reload
 
-        systemctl start jenkins
-        systemctl enable jenkins
+        systemctl enable --now jenkins
         systemctl status jenkins
 
         cat /var/lib/jenkins/secrets/initialAdminPassword

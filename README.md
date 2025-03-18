@@ -1,0 +1,1 @@
+The main aim for this project to made automatically an ec2 installed jenkins for ci/cd pipline testing. Piplien tested work planned to be a django project appointment to be precise. Currently working on addtional tools installing on ec2 before is made by apply
